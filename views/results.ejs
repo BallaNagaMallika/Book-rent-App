@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book search</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        div {
+            width: 30%;
+            margin: 20px;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+        h2 {
+            text-align: center;
+            background-color: rgb(53, 117, 98);
+            font-size: xx-large;
+            width: 100%;
+        }
+        h3 {
+            font-size: large;
+            margin: 10px 0;
+        }
+        p {
+            font-size: medium;
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px 0;
+        }
+        form {
+            text-align: center;
+        }
+        button{
+            border-color: black;
+            border-style: double;
+            font-size: 20px;
+            border-radius: 6px;
+            height: 50px;
+            width: 150px;
+            background-color: rgba(71, 176, 122, 0.495);
+            cursor: pointer;
+            border-width:2px;
+            margin-left: 0px;   
+            margin: 10px;
+        }
+        button:hover{
+            color: white;
+            background-color: black;
+            border-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h2>Search Results</h2>
+    <% if (books.length === 0) { %>
+        <p>No books found for "<%= searchTerm %>". Please try another search term.</p>
+    <% } else { %>
+        <% books.forEach((book) => { %>
+            <div>
+                <h3><%= book.title %></h3>
+                <p><%= book.author %></p>
+                <img src="<%= book.cover %>" alt="Book cover">
+                <form action="/add-to-wishlist" method="post">
+                    <input type="hidden" name="title" value="<%= book.title %>">
+                    <input type="hidden" name="url" value="<%= book.url %>">
+                    <button type="submit">Add to Wishlist</button>
+                </form>
+                <form action="/rent-book" method="post">
+                    <input type="hidden" name="title" value="<%= book.title %>">
+                    <input type="hidden" name="cost" value="100">
+                    <button type="submit">Rent for 100 Rupees</button>
+                </form>
+            </div>
+        <% }) %>
+    <% } %>
+    
+</body>
+</html>
+

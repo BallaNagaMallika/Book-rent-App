@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body{
+            background-color: antiquewhite;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        h1{
+            background-color: rgb(117, 53, 53);
+            text-align: center;
+            color: white;
+        }
+        h2{
+            padding-left: 15%;
+        }
+        ul{
+            background-color: rgb(53, 117, 98);
+            list-style-type: none;
+            display: flex;
+            gap: 200px;
+            padding: 15px;
+        }
+        ul li{
+            padding-left: 70px;
+        }
+        ul li a{
+            color: black;
+            text-decoration: none;
+            font-size: 25px;
+        }
+        ul li a:hover{
+            color: white;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .image-row a {
+            margin: 90px;
+        }
+
+        .image-row img {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #cccccc;
+            transition: transform 0.5s, box-shadow 0.2s;
+            border-radius: 10px;
+        }
+
+        .image-row img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Welcome <%= user.name %> !!</h1>
+    <ul>
+        <li><a href="/wishlist">Your Wishlist</a></li>
+        <li><a href="/books">Search Books</a></li>
+        <li><a href="/rent">Rented books</a></li>
+        <li><a href="/logout">Logout</a></li>
+    </ul>
+    <h2>Discover your next adventure: Dive into our curated collection of recommended books!</h2>
+    <div class="gallery">
+        <div class="image-row">
+            <a href="https://en.wikipedia.org/wiki/Stranger_in_a_Strange_Land"><img src="https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/pictures/2015/9/2/1441205095847/2eab3067-c0d9-44d7-abcd-d21af5b4b245-bestSizeAvailable.jpeg?width=300&quality=45&auto=format&fit=max&dpr=2&s=7e20b9ee90aaa1bbf1558190049a0335" alt="Image 1"></a>
+            <a href="https://en.wikipedia.org/wiki/The_Great_Gatsby"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/The_Great_Gatsby_Cover_1925_Retouched.jpg" alt="Image 2"></a>
+            <a href="https://en.wikipedia.org/wiki/Jane_Eyre"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRR6HRspBSfMYR13M61S1YPTLSjwuJ08BITAlJisHa6NBPSJZeX" alt="Image 3"></a>
+        </div>
+        <div class="image-row">
+            <a href="https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR819TtvIV0JJ5_Wzzfcnk3y2eXfPpamZmdbrg5ofv0Ydafpw_f" alt="Image 4"></a>
+            <a href="https://en.wikipedia.org/wiki/Catch-22"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTAuK4rFUg-jUNuHV-bW-tZJ3RBQ_W2wUm25kevDVP46Y-3Tt16" alt="Image 5"></a>
+            <a href="https://en.wikipedia.org/wiki/Middlemarch"><img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQso8_15kYgKMPemhCZ4QrYU8vEshDXdMOb30gOryqYHOlJfr-F" alt="Image 6"></a>
+        </div>
+    </div>
+</body>
+</html>

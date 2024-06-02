@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+    align-items: center;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 0%;
+    display: flex;
+    margin:0%;
+    background-image: url('https://images.unsplash.com/photo-1432821596592-e2c18b78144f?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9naW58ZW58MHx8MHx8fDA%3D') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login-signup-container{
+    padding: 30px;
+    width: 300px;
+    height: 370px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    background-color: rgb(53, 117, 98);
+    margin: 20px;
+    border-radius: 15px;
+    margin-top: 325px;
+}
+.login-signup-container h1{
+    text-align: center;
+    margin-top: 0;
+    font-size: 30px;
+}
+label{
+    padding-left: 30px;
+    font-size: 20px;
+}
+input[type=text]{
+    border-radius: 5px;
+    height: 30px;
+    width: 250px;
+    text-align: center;
+    margin-left: 30px;
+    background-color: antiquewhite;
+}
+input[type=password]{
+    border-radius: 5px;
+    height: 30px;
+    width: 250px;
+    text-align: center;
+    margin-left:30px;
+    background-color: antiquewhite;
+}
+input[type=tel]{
+    border-radius: 5px;
+    height: 30px;
+    width: 250px;
+    text-align: center;
+    margin-left:30px;
+    background-color: antiquewhite;
+}
+input[type=email]{
+    border-radius: 5px;
+    height: 30px;
+    width: 250px;
+    text-align: center;
+    margin-left: 30px;
+    background-color: antiquewhite;
+}
+button{
+    border-color: black;
+    border-style: double;
+    font-size: 20px;
+    border-radius: 6px;
+    height: 40px;
+    width: 250px;
+    background-color: rgba(71, 176, 122, 0.495);
+    cursor: pointer;
+    border-width:2px;
+    margin-top: 15px;
+    margin-left: 30px;   
+}
+button:hover{
+    color: white;
+    background-color: black;
+    border-color: antiquewhite;
+}
+.login-signup-container .signup-link{
+    margin-top: 15px;
+    display:block;
+    margin-left: 30px;
+    color: antiquewhite;
+    
+}
+
+    </style>
+</head>
+<body>
+    <div class="login-signup-container">
+        <form action="/login" method="POST">
+            <h1>Login</h1>
+            <label for="email">Email:</label><br>
+            <input type="text" name="email" id="email" placeholder="Enter your email" required><br>
+            <label for="password">Password:</label><br>
+            <input type="password" name="password" id="password" placeholder="Enter your password" required>
+            <br>
+            <button type="submit" id="login">Login</button>
+            <a href="/signup" class="signup-link">Don't have an account? Signup </a>
+        </form>
+    </div>
+</body>
+</html>

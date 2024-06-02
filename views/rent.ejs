@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rented Books</title>
+    <style>
+        body {
+            background-color: antiquewhite;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: rgb(53, 117, 98);
+            color: white;
+        }
+        h2 {
+            text-align: center;
+            background-color: rgb(53, 117, 98);
+            font-size: xx-large;
+            width: 100%;
+        }
+        button{
+            border-color: black;
+            border-style: double;
+            font-size: 20px;
+            border-radius: 6px;
+            height: 40px;
+            width: 250px;
+            background-color: rgba(204, 241, 222, 0.495);
+            cursor: pointer;
+            border-width:2px;
+            margin-top: 15px;
+            margin-left: 30px;   
+        }
+        button:hover{
+            color: white;
+            background-color: black;
+            border-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <h2>Rented Books</h2>
+    <% if (rentedBooks.length === 0) { %>
+        <p>No books rented.</p>
+    <% } else { %>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Cost</th>
+            </tr>
+            <% rentedBooks.forEach((book) => { %>
+                <tr>
+                    <td><%= book.title %></td>
+                    <td><%= book.cost %> Rupees</td>
+                </tr>
+            <% }) %>
+        </table>
+        <h3>Total Cost: <%= totalCost %> Rupees</h3>
+        <form action="save-rented-books" method="post">
+            <button type="submit">save</button>
+        </form>
+        <p>We accept payments for book rentals via popular payment apps like Google Pay, Phone Pay, and Paytm</p>
+    <% } %>
+</body>
+</html>

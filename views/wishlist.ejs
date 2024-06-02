@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wishlist</title>
+    <style>
+      body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-color: antiquewhite;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        h2 {
+        text-align: center;
+        background-color: rgb(53, 117, 98);
+        font-size: xx-large;
+        width: 100%;
+        }
+
+        .wishlist-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 0px 80px 20px 80px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+            
+        }
+
+        p {
+            margin-top: 0;
+            margin-left: 10%;
+        }
+
+        a {
+            color: rgb(53, 117, 98);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        button{
+            border-color: black;
+            border-style: double;
+            font-size: 20px;
+            border-radius: 6px;
+            height: 40px;
+            width: 10cap;
+            background-color: rgba(71, 176, 122, 0.495);
+            cursor: pointer;
+            border-width:2px;
+            margin-left: 10%;   
+        }
+        button:hover{
+            color: white;
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+  <h2>Wishlist</h2>
+    <% wishlist.forEach((book, index) => { %>
+        <div class="wishlist-item">
+          <h3><%= book.title %></h3>
+          <p><a href="<%= book.url %>" target="_blank">View Book</a></p>
+          <form action="/delete-from-wishlist" method="post">
+            <input type="hidden" name="index" value="<%= index %>">
+            <button type="submit">Delete</button>
+          </form>
+        </div>
+    <% }) %>
+    <div class="container">
+      <form action="/save-wishlist" method="post">
+          <button type="submit">Save Wishlist</button>
+      </form>
+  </div>
+</body>
+</html>
